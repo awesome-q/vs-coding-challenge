@@ -1,0 +1,18 @@
+<div role="list">
+  <div *ngFor="let event of events">
+    <h4>{{ event.name }}</h4>
+    <dl>
+      <dt>Venue</dt>
+      <dd>{{ event?.venue?.name }}</dd>
+
+      <dt>City</dt>
+      <dd>{{ event?.venue?.city }}</dd>
+
+      <dt>State</dt>
+      <dd>{{ event?.venue?.state }}</dd>
+
+      <dt>Date</dt>
+      <dd>{{ event?.date }}</dd>
+    </dl>
+  </div>
+</div>
