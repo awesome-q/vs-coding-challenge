@@ -10,12 +10,12 @@ import { HttpResponse } from '@angular/common/http';
 export class AppComponent implements OnInit {
 
   get response(): any[] {
-    return this._response.filter(({ venue }) => {
+    return this._response.filter((event) => {
       if (!this._searchQuery) { return true; }
 
-      const { city, date } = venue;
-
-      return [city.toLowerCase(), date.toLowerCase()].includes(this._searchQuery.toLowerCase());
+      return [event.venue.city.toLowerCase(), event.date.toLowerCase()]
+        .join('')
+        .includes(this._searchQuery.toLowerCase());
     });
   }
 
